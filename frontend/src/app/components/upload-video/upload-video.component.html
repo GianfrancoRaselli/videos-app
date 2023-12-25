@@ -1,0 +1,33 @@
+<div class="modal" *ngIf="modalVisible">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title">Upload Video</span>
+      <div class="modal-close-icon-container" (click)="closeModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+    <form (ngSubmit)="submitForm()" #form="ngForm">
+      <div class="form-input">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required maxlength="60" [(ngModel)]="title" />
+      </div>
+      <div class="form-input">
+        <label for="video">Video</label>
+        <input type="file" id="video" name="video" accept="video/*" (change)="handleVideoChange($event)" required />
+      </div>
+      <div class="form-input">
+        <label for="image">Preview</label>
+        <input type="file" id="image" name="image" accept="image/*" (change)="handleImageChange($event)" required />
+      </div>
+      <button
+        class="submit-btn"
+        type="submit"
+        [ngClass]="{ 'submit-btn__enabled': !form.invalid, 'submit-btn__disabled': form.invalid }"
+        [disabled]="form.invalid"
+      >
+        <span *ngIf="!isLoading">Upload video</span>
+        <app-spinner *ngIf="isLoading"></app-spinner>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="page-container">
+  <div class="video-container">
+    <video #videoElement controls (loadedmetadata)="onVideoMetadataLoaded($event)">
+      <source [src]="videoUrl" type="video/mp4" />
+      Your browser does not support the video element.
+    </video>
+    <span class="title">{{ video?.title }}</span>
+    <div class="stats">
+      <div class="duration stats-pill">
+        <i class="fa-solid fa-clock"></i>
+        <span>{{ duration }}</span>
+      </div>
+      <div class="size stats-pill">
+        <i class="fa-solid fa-floppy-disk"></i>
+        <span>{{ sizeInMB }}</span>
+      </div>
+      <div class="datetime stats-pill">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>{{ localDatetime }}</span>
+      </div>
+    </div>
+  </div>
+</div>

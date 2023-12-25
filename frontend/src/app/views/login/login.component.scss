@@ -1,0 +1,129 @@
+.page-container {
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    .form-content {
+      position: relative;
+      padding: 7.5rem 4rem 4rem 4rem;
+      border-radius: 1.2rem;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon-container {
+        position: absolute;
+        top: 0.6rem;
+        padding: 2rem;
+        border-radius: 100%;
+        color: white;
+        background-color: #da135d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .fa-user {
+          font-size: 1.5rem;
+        }
+      }
+      .form {
+        min-width: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+        .form-input {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0.2rem;
+          label {
+            font-size: 0.95rem;
+            color: #555555;
+          }
+          .input-container {
+            position: relative;
+            height: 2.2rem;
+            width: 100%;
+            .input-icon-container-front {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 2.2rem;
+              width: 2.2rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i {
+                color: #da135d;
+              }
+            }
+            .input-icon-container-password {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 2.2rem;
+              width: 2.2rem;
+              background-color: #ddd;
+              border-top: 1px solid grey;
+              border-right: 1px solid grey;
+              border-bottom: 1px solid grey;
+              border-radius: 0 0.2rem 0.2rem 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              i {
+                color: rgb(82, 82, 82);
+              }
+            }
+            .input-icon-container-password:hover {
+              cursor: pointer;
+            }
+            input {
+              height: 100%;
+              width: 100%;
+              padding: 0 2.2rem;
+              border: 1px solid grey;
+              border-radius: 0.2rem;
+            }
+          }
+          .input-error {
+            font-size: 0.9rem;
+            color: red;
+          }
+        }
+        .login-btn {
+          margin-top: 0.6rem;
+          padding: 0.6rem;
+          border-radius: 0.2rem;
+          border: none;
+          color: white;
+        }
+        .login-btn__enabled {
+          cursor: pointer;
+          background-color: #da135d;
+        }
+        .login-btn__disabled {
+          background-color: #df447e;
+        }
+      }
+    }
+    .logo-container {
+      height: 4.2rem;
+      width: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

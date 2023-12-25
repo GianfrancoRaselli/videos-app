@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header--container">
+    <div class="header--content">
+      <div class="header--left-side">
+        <a routerLink="/">
+          <div class="logo-container">
+            <img src="assets/logo.png" />
+          </div>
+        </a>
+        <button class="upload-video-btn" (click)="isUploadVideoModalVisible = true">
+          <i class="fa-solid fa-upload"></i>
+          <span>Upload new video</span>
+        </button>
+      </div>
+      <div class="user-container" *ngIf="authUser" [matMenuTriggerFor]="menu">
+        <span class="user-fullname">{{ authUser.fullname }}</span>
+        <div class="icon-container">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item class="logout-btn" (click)="logOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Log out</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</header>
+<app-upload-video [modalVisible]="isUploadVideoModalVisible" (close)="isUploadVideoModalVisible = false"></app-upload-video>

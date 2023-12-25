@@ -1,0 +1,44 @@
+.page-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .video-container {
+    width: 50%;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    video {
+      height: 100%;
+      width: 100%;
+    }
+    .title {
+      font-size: 1.15rem;
+    }
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      .stats-pill {
+        font-size: 0.92rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 0.8rem;
+        color: white;
+        background-color: #da135d;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem; 
+      }
+    }
+  }
+}

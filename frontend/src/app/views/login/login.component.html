@@ -1,0 +1,58 @@
+<div class="page-container">
+  <div class="form-container">
+    <div class="form-content">
+      <div class="icon-container">
+        <i class="fas fa-user"></i>
+      </div>
+      <form class="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="form-input">
+          <label for="username">Username</label>
+          <div class="input-container">
+            <div class="input-icon-container-front">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="text" id="username" name="username" [(ngModel)]="formData.username" required minlength="6" />
+          </div>
+          <div class="input-error" *ngIf="loginForm.controls['username']?.hasError('minlength')">
+            The username must be at least 6 characters.
+          </div>
+        </div>
+        <div class="form-input">
+          <label for="password">Password</label>
+          <div class="input-container">
+            <div class="input-icon-container-front">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <div class="input-icon-container-password" (click)="toggleIsShowingPassword()">
+              <i class="fa-solid fa-eye" *ngIf="!isShowingPassword"></i>
+              <i class="fa-solid fa-eye-slash" *ngIf="isShowingPassword"></i>
+            </div>
+            <input
+              type="{{ isShowingPassword ? 'text' : 'password' }}"
+              id="password"
+              name="password"
+              [(ngModel)]="formData.password"
+              required
+              minlength="8"
+            />
+          </div>
+          <div class="input-error" *ngIf="loginForm.controls['password']?.hasError('minlength')">
+            The password must be at least 8 characters.
+          </div>
+        </div>
+        <button
+          class="login-btn"
+          type="submit"
+          [ngClass]="{ 'login-btn__enabled': !loginForm.invalid, 'login-btn__disabled': loginForm.invalid }"
+          [disabled]="loginForm.invalid"
+        >
+          <span *ngIf="!isLoading">Log in</span>
+          <app-spinner *ngIf="isLoading"></app-spinner>
+        </button>
+      </form>
+    </div>
+    <div class="logo-container">
+      <img src="assets/logo.png" />
+    </div>
+  </div>
+</div>
