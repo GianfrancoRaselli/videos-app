@@ -34,6 +34,6 @@ async function createUser() {
     User.create({
       username: configStr('DATABASE_USER_USERNAME'),
       password: await encryptPassword(configStr('DATABASE_USER_PASSWORD')),
-      fullname: 'Gianfranco Raselli',
+      fullname: 'VideoTranslatorAI',
     });
 }
