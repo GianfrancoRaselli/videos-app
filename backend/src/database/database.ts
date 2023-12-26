@@ -4,7 +4,7 @@ import { encryptPassword } from '../helpers/hashing.helpers';
 
 export const sequelize = new Sequelize(
   configStr('DATABASE_DATABASE'),
-  configStr('DATABASE_USER'),
+  configStr('DATABASE_USERNAME'),
   configStr('DATABASE_PASSWORD'),
   {
     host: configStr('DATABASE_HOST'),
