@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Store } from '@ngrx/store';
-import { getAuthUser } from '../../store/auth.selectors';
+import { getAccessToken, getAuthUser } from '../../store/auth.selectors';
 import { User } from '../../models/User';
 
 @Component({
@@ -10,6 +10,7 @@ import { User } from '../../models/User';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
+  accessToken = '';
   authUser: User | null = null;
   isUploadVideoModalVisible = false;
 
@@ -19,6 +20,9 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.store.select(getAccessToken).subscribe((accessToken) => {
+      this.accessToken = accessToken;
+    });
     this.store.select(getAuthUser).subscribe((authUser) => {
       this.authUser = authUser;
     });
